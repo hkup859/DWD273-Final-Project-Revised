@@ -1,0 +1,66 @@
+﻿@model DWD273_Final_Project_Revised.Models.Ticket
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Ticket</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Topic.TopicDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Topic.TopicDesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.firstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.firstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.lastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.message)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.message)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.submitTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.submitTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.resolved)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.resolved)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
