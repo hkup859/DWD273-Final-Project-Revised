@@ -6,6 +6,7 @@ using System.Web;
 
 namespace DWD273_Final_Project_Revised.Models
 {
+    //Topic Components
     public class Topic
     {
         public int ID { get; set; }

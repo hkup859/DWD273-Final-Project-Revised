@@ -11,5 +11,6 @@ namespace DWD273_Final_Project_Revised.Models
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<Topic> Topics { get; set; }
 
+        public System.Data.Entity.DbSet<DWD273_Final_Project_Revised.Models.Comment> Comments { get; set; }
     }
 }
