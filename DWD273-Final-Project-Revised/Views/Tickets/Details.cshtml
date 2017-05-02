@@ -58,7 +58,44 @@
             @Html.DisplayFor(model => model.resolved)
         </dd>
 
+		<h4>
+			Comments
+		</h4>
+
+		<!--Add Bootstrap modal for Button that opens comment addition form-->
+
+		
+
+		@foreach (var comment in Model.Comments)
+		{
+			
+			<dt>
+				@comment.firstName @comment.lastName
+			</dt>
+
+			<dd>
+				@comment.message
+			</dd>
+		}
+
+		
+
     </dl>
+	@using (Html.BeginForm("AddComment", "Tickets", FormMethod.Post))
+	{
+	<label for="firstName">First Name</label>
+	<input id="firstName" name="firstName" type="text" />
+
+	<label for="lastName">Last Name</label>
+	<input id="lastName" name="lastName" type="text" />
+
+	<label for="message">Comment</label>
+	<textarea id="message" name="message"></textarea>
+
+	<input type="hidden" name="TicketID" id="TicketID" value="@Model.ID" />
+
+	<button type="submit">Submit Comment</button>
+	}
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |

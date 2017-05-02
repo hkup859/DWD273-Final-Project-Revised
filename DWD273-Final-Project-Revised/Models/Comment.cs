@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -17,5 +18,12 @@ namespace DWD273_Final_Project_Revised.Models
         public string message { get; set; }
         [Display(Name = "Topic")]
         public string relatedTopic { get; set; }
+        public int TicketID { get; set; }
+
+
+        //Lazy Loading
+
+        [ForeignKey("TicketID")]
+        public virtual Ticket Ticket { get; set; }
     }
 }

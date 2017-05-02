@@ -130,5 +130,17 @@ namespace DWD273_Final_Project_Revised.Controllers
             }
             base.Dispose(disposing);
         }
+
+        [HttpPost]
+        public ActionResult AddComment([Bind(Include = "firstName,lastName,message,TicketID")] Comment comment)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Comments.Add(comment);
+                db.SaveChanges();
+                return RedirectToAction("Details/" + comment.TicketID);
+            }
+            return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        }
     }
 }
