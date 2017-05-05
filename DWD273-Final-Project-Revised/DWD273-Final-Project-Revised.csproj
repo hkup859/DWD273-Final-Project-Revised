@@ -209,6 +209,14 @@
     <Compile Include="Migrations\201705022116460_Comments.Designer.cs">
       <DependentUpon>201705022116460_Comments.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705051740334_Time.cs" />
+    <Compile Include="Migrations\201705051740334_Time.Designer.cs">
+      <DependentUpon>201705051740334_Time.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705051742215_time-Corrected.cs" />
+    <Compile Include="Migrations\201705051742215_time-Corrected.Designer.cs">
+      <DependentUpon>201705051742215_time-Corrected.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Comment.cs" />
@@ -320,6 +328,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705022116460_Comments.resx">
       <DependentUpon>201705022116460_Comments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705051740334_Time.resx">
+      <DependentUpon>201705051740334_Time.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705051742215_time-Corrected.resx">
+      <DependentUpon>201705051742215_time-Corrected.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

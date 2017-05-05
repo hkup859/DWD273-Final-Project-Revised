@@ -16,6 +16,7 @@ namespace DWD273_Final_Project_Revised.Models
         public string lastName { get; set; }
         [Display(Name = "Comment")]
         public string message { get; set; }
+        public String time { get; set; }
         [Display(Name = "Topic")]
         public string relatedTopic { get; set; }
         public int TicketID { get; set; }
