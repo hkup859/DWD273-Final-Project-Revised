@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using DWD273_Final_Project_Revised.Models;
+using System.Data.Entity.Migrations;
 
 namespace DWD273_Final_Project_Revised.Controllers
 {
@@ -40,7 +41,14 @@ namespace DWD273_Final_Project_Revised.Controllers
         public ActionResult Create()
         {
             ViewBag.TopicID = new SelectList(db.Topics, "ID", "TopicDesc");
-            return View();
+            //Auto-Fill First and Last Name (Do this in comments)
+            var dbContext = new ApplicationDbContext();
+            ApplicationUser appUser = dbContext.Users.Where(x => x.UserName == User.Identity.Name).FirstOrDefault();
+
+            Ticket viewModel = new Ticket();
+            viewModel.firstName = appUser.FirstName;
+            viewModel.lastName = appUser.LastName;
+            return View(viewModel);
         }
 
         // POST: Tickets/Create
@@ -84,7 +92,7 @@ namespace DWD273_Final_Project_Revised.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,firstName,lastName,message,submitTime,resolved,TopicID")] Ticket ticket)
+        public ActionResult Edit([Bind(Include = "ID,firstName,lastName,message,resolved,submitTime,TopicID")] Ticket ticket)
         {
             if (ModelState.IsValid)
             {
@@ -132,11 +140,12 @@ namespace DWD273_Final_Project_Revised.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddComment([Bind(Include = "firstName,lastName,message,TicketID")] Comment comment)
+        public ActionResult AddComment([Bind(Include = "firstName,lastName,message,TicketID,time")] Comment comment)
         {
             if (ModelState.IsValid)
             {
                 db.Comments.Add(comment);
+                comment.time = DateTime.Now.ToShortDateString();
                 db.SaveChanges();
                 return RedirectToAction("Details/" + comment.TicketID);
             }

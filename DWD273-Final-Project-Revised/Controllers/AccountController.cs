@@ -151,7 +151,15 @@ namespace DWD273_Final_Project_Revised.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                // Assuming you have updated RegisterViewModel and the form
+                // Map from RegisterViewModel class to UserProfile class
+                // var userProfile = new UserProfile { FirstName = model.FirstName, LastName = model.LastName };
+                // Create UserProfile row and get ID
+                // var userProfileID = db.UserProfiles.Add(userProfile);
+                // Tie UserProfileID to ApplicationUser.UserProfileID
+                // var user = new ApplicationUser { UserName = model.Email, Email = model.Email, UserProfileID = userProfileID };
+
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

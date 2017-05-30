@@ -50,6 +50,7 @@ namespace DWD273_Final_Project_Revised.Controllers
         {
             if (ModelState.IsValid)
             {
+                comment.time = DateTime.Now.ToString("MM/dd/yyyy");
                 db.Comments.Add(comment);
                 db.SaveChanges();
                 return RedirectToAction("Index");

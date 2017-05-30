@@ -5,7 +5,7 @@
 }
 
 <h2>Index</h2>
-
+<p>TEST: @(ViewBag.AppUser == null ? "Test" : ViewBag.AppUser.FirstName)</p>
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
@@ -44,7 +44,9 @@
             @Html.DisplayFor(modelItem => item.lastName)
         </td>
         <td>
+			<p style="white-space: pre-wrap;">
             @Html.DisplayFor(modelItem => item.message)
+			</p>
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.submitTime)

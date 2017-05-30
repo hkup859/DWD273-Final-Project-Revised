@@ -1,4 +1,4 @@
-namespace DWD273_Final_Project_Revised.Migrations
+namespace DWD273_Final_Project_Revised.TicketContextMigration
 {
     using System;
     using System.Data.Entity;
@@ -10,6 +10,7 @@ namespace DWD273_Final_Project_Revised.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            MigrationsDirectory = @"TicketContextMigration";
         }
 
         protected override void Seed(DWD273_Final_Project_Revised.Models.TicketContext context)

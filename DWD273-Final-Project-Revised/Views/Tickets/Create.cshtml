@@ -13,12 +13,16 @@
     
     <div class="form-horizontal">
         <h4>Ticket</h4>
+		
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(model => model.firstName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.firstName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.firstName, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+				@*Make the form Know your first and last name instead of asking*@
+				@*@Html.Display(model => model.firstName, new { htmlAttributes = new { @class = "form-test" } }))*@
+				@*@Html.DisplayFor(Model => Model.firstName)*@
                 @Html.ValidationMessageFor(model => model.firstName, "", new { @class = "text-danger" })
             </div>
         </div>

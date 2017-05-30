@@ -9,6 +9,8 @@ namespace DWD273_Final_Project_Revised.Models
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -21,7 +23,7 @@ namespace DWD273_Final_Project_Revised.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("LoginDB", throwIfV1Schema: false)
         {
         }
 
@@ -30,4 +32,12 @@ namespace DWD273_Final_Project_Revised.Models
             return new ApplicationDbContext();
         }
     }
+
+    
+     // Model - Class (Table)
+     // Update Database - with specifics -Configuration DWD273_Final_Project_Revised.ApplicationDBMigration.Configuration
+     // The Rest in AccountViewController - Register
+     
+
 }
+ 

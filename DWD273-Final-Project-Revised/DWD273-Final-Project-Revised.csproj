@@ -183,6 +183,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationDBMigration\201705162126046_InitialCreate.cs" />
+    <Compile Include="ApplicationDBMigration\201705162126046_InitialCreate.Designer.cs">
+      <DependentUpon>201705162126046_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationDBMigration\201705162149087_Initial.cs" />
+    <Compile Include="ApplicationDBMigration\201705162149087_Initial.Designer.cs">
+      <DependentUpon>201705162149087_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationDBMigration\201705162150400_QuickChange.cs" />
+    <Compile Include="ApplicationDBMigration\201705162150400_QuickChange.Designer.cs">
+      <DependentUpon>201705162150400_QuickChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationDBMigration\201705162235033_Names.cs" />
+    <Compile Include="ApplicationDBMigration\201705162235033_Names.Designer.cs">
+      <DependentUpon>201705162235033_Names.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationDBMigration\Configuration.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -197,27 +214,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201704252200002_Initial.cs" />
-    <Compile Include="Migrations\201704252200002_Initial.Designer.cs">
-      <DependentUpon>201704252200002_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704252215181_Add_Topics.cs" />
-    <Compile Include="Migrations\201704252215181_Add_Topics.Designer.cs">
-      <DependentUpon>201704252215181_Add_Topics.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705022116460_Comments.cs" />
-    <Compile Include="Migrations\201705022116460_Comments.Designer.cs">
-      <DependentUpon>201705022116460_Comments.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705051740334_Time.cs" />
-    <Compile Include="Migrations\201705051740334_Time.Designer.cs">
-      <DependentUpon>201705051740334_Time.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705051742215_time-Corrected.cs" />
-    <Compile Include="Migrations\201705051742215_time-Corrected.Designer.cs">
-      <DependentUpon>201705051742215_time-Corrected.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -227,6 +223,11 @@
     <Compile Include="Models\Topic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="TicketContextMigration\201705162145489_Initial.cs" />
+    <Compile Include="TicketContextMigration\201705162145489_Initial.Designer.cs">
+      <DependentUpon>201705162145489_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TicketContextMigration\Configuration.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -320,20 +321,20 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201704252200002_Initial.resx">
-      <DependentUpon>201704252200002_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="ApplicationDBMigration\201705162126046_InitialCreate.resx">
+      <DependentUpon>201705162126046_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704252215181_Add_Topics.resx">
-      <DependentUpon>201704252215181_Add_Topics.cs</DependentUpon>
+    <EmbeddedResource Include="ApplicationDBMigration\201705162149087_Initial.resx">
+      <DependentUpon>201705162149087_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705022116460_Comments.resx">
-      <DependentUpon>201705022116460_Comments.cs</DependentUpon>
+    <EmbeddedResource Include="ApplicationDBMigration\201705162150400_QuickChange.resx">
+      <DependentUpon>201705162150400_QuickChange.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705051740334_Time.resx">
-      <DependentUpon>201705051740334_Time.cs</DependentUpon>
+    <EmbeddedResource Include="ApplicationDBMigration\201705162235033_Names.resx">
+      <DependentUpon>201705162235033_Names.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705051742215_time-Corrected.resx">
-      <DependentUpon>201705051742215_time-Corrected.cs</DependentUpon>
+    <EmbeddedResource Include="TicketContextMigration\201705162145489_Initial.resx">
+      <DependentUpon>201705162145489_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
