@@ -2,7 +2,14 @@
     padding-top: 50px;
     padding-bottom: 20px;
 }
+/*Make a CSS class using nthchild Selector to alternate color on each row*/
+.altRow:nth-child(odd) {
 
+}
+
+.altRow:nth-child(Even) {
+
+}
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
